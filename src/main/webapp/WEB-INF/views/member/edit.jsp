@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원 목록</title> 
+<title>회원정보 수정</title>
 </head>
 <body>
-	<h1>회원목록</h1>
+	<h1>회원정보 수정</h1>
 </body>
 </html>

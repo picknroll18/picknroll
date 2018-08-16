@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>서비스 수정</title>
 </head>
 <body>
-
+	<h1>서비스 수정</h1>
 </body>
 </html>
