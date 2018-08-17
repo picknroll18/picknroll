@@ -9,22 +9,22 @@ public class ServiceController {
 	
 	@RequestMapping("reg")
 	public String reg() {
-		return "/WEB-INF/views/admin/service/reg.jsp";
+		return "admin/service/reg";
 	}
 	
 	@RequestMapping("list")
 	public String list() {
-		return "/WEB-INF/views/admin/service/reg.jsp";
+		return "admin/service/list";
 	}
 	
 	@RequestMapping("edit")
 	public String edit() {
-		return "/WEB-INF/views/admin/service/reg.jsp";
+		return "admin/service/edit";
 	}
 	
 	@RequestMapping("delete")
 	public String delete() {
-		return "/WEB-INF/views/admin/service/list.jsp";
+		return "admin/service/delete";
 	}
 
 }
