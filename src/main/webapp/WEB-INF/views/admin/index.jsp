@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
 <title>PicknRoll 관리자</title>
 <style>
 body, h1, ul{
@@ -23,7 +24,6 @@ body{
 	background : #2f4050;
 }
 
- 
 .hide{ 
 	display: none;
 }
@@ -50,9 +50,26 @@ body{
 	#side-menu ul > li{
 	}
 	
-	#side-menu ul > li:first-child{
-		
+	#side-menu .profile{
+		background: #293848;
+		padding-left :22px;
+		padding-top : 22px;
+		height : 150px;
 	}
+	
+	#side-menu .profile div{
+		background : white;
+   		width: 100px; height: 100px;
+   	 	object-fit: cover;
+    	border-radius: 50%;
+	}
+	
+	#side-menu .profile h1{
+		color: white;
+		font-size: 13px;
+		margin-top: 5px;
+	}
+	
 	
 	#side-menu > ul > li > a{
 		font-size: 13px;
@@ -69,7 +86,9 @@ body{
 #main{
 	background: #f3f3f4;
 	flex-grow: 1;
-	height: 1000px;
+	height: 100vh;
+	box-sizing: border-box;
+	padding: 20px;	 
 }
 	
 </style> 
@@ -81,8 +100,9 @@ body{
 			<section id="side-menu">  
 				<h1 class="hide">관리목록</h1>
 				<ul>
-					<li>
+					<li class="profile">
 						<div></div>
+						<h1>관리자 | flwj@naver.com</h1>
 					</li>
 					<li><a href="#">회원관리</a></li>
 					<li><a href="#">서비스관리</a></li>
@@ -92,11 +112,13 @@ body{
 		</nav>
 		<main id="main">
 			<header id="header">
-				<section>
-					<h1>안녕하세요 관리자님</h1>
-				</section>
+				<h1>관리자 메인</h1>
+				<hr />
 			</header>
+			<section> 
+				<p>안녕하세요 관리자님 <br />오늘은 어떤 볼일을?</p>
+			</section>
 		</main>
-	</div>
+	</div> 
 </body>
 </html>
