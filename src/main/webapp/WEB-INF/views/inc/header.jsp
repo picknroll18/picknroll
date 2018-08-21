@@ -58,7 +58,7 @@ a {
 		display: block;
 		position: fixed;
 		background : #000000;
-		top: 0px;   
+		top: 45px;   
 		left: 0px;
 		width: 100%; 
 		height: 0%; /*장막을 위로 올린다.*/ 
@@ -76,14 +76,14 @@ a {
 	#header #notification-menu {
 		/*가상클래쓰를 쓰기 위해 header에 클래스를 둔다. 형제로 가즈아*/
 		position: fixed;
-		top: 0px;
+		top: 45px; 
 		right: -50%;
 		width: 50%;
 		height: 100%; 
 		background: #ffffff;
 		z-index: 10;
 		display: block; 
-		transition : 500ms all ease;
+		transition : 500ms right ease;
 	}
 
 	#header.right-menu-show #notification-menu {
@@ -100,14 +100,14 @@ a {
 	#header #main-menu {
 		/*가상클래쓰를 쓰기 위해 header에 클래스를 둔다. 형제로 가즈아*/
 		position: fixed;
-		top: 0px;
+		top: 45px; 
 		left: -50%;
 		width: 50%;
 		height: 100%; 
 		background: #ffffff;
 		z-index: 10;
 		display: block;
-		transition : 500ms right ease;
+		transition : 500ms left ease;
 	}
 	
 	#header.left-menu-show #main-menu {
@@ -127,15 +127,6 @@ a {
 		<input class="button find-button" type="button" value="검색">
 		<input class="button hamburger-button" type="button" value="메뉴보기">
 	</section>
-	<section id="notification-menu">
-		<h1 class="hidden">알림</h1>
-		<ul>
-			<li><a href="">어쩌구 알림</a></li>
-			<li><a href="">어쩌구 알림</a></li>
-			<li><a href="">어쩌구 알림</a></li>
-			<li><a href="">어쩌구 알림</a></li>
-		</ul>
-	</section>
 	<section id="main-menu">
 		<h1 class="hidden">메뉴</h1>
 		<ul>
@@ -145,9 +136,15 @@ a {
 			<li><a href="">어쩌구 메뉴</a></li>
 		</ul>
 	</section>
-	 
-<!-- 	notification menu -->
-	
+	<section id="notification-menu">
+		<h1 class="hidden">알림</h1>
+		<ul>
+			<li><a href="">어쩌구 알림</a></li>
+			<li><a href="">어쩌구 알림</a></li>
+			<li><a href="">어쩌구 알림</a></li>
+			<li><a href="">어쩌구 알림</a></li>
+		</ul>
+	</section>
 </header>
 <script>
 </script>
