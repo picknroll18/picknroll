@@ -40,6 +40,7 @@ a {
 	text-indent: -999px;  
 	border: 0px;
 	padding: 0px;
+	cursor: pointer;
 }
 
 	.notification-button { 
@@ -127,7 +128,7 @@ a {
 	}
 	
 	#header.menu-show:after {
-		opacity: 0.5; 
+		opacity: 0.7;  
 		height: 100%;
 	}
 	  
@@ -140,24 +141,39 @@ a {
 	}
 	
 /*----notification-container--------------------*/
-#notification-container{
-	position: relative;
-}
-	#notification-container .notification-info{
-		position: absolute; 
-		background: pink;
-		width : 300px;
-		top : 0px;  
-		right : 10px;  
+	#header #notification-container{ 
+		position: relative;
+		display: none;
+	}
+
+	#header #notification-container .notification-info{
+		position: absolute;   
+		border : 1px solid #a9a9a9;
+		background: white;  
+		width : 30%;     
+		top : 0px;
+		right : 10px;
+		z-index: 10;
+	}
+	      
+	#header #notification-container .notification-arrow{
+		position: absolute;     
+		border-top: 0px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid #a9a9a9;   
+		border-left: 10px solid transparent;
+		top : -10px;     
+		right : 13px;
+		z-index: 10;    
 	}
 	
-	#notification-container .notification-arrow{
-		position: absolute; 
-		background: pink;
-		width : 5px;
-		height : 5px;
-		top : -5px;   
-		right : 15px;  
+ 	#header.notification-show #notification-container {
+		display: block;
+	}  
+	 
+	#header.notification-show:after {
+		opacity: 0.7;   
+		height: 100%; 
 	}
 
 	 
@@ -183,10 +199,10 @@ a {
 		<input class="button notification-button" type="button" value="메뉴보기">
 	</section>
 	
-	<aside id="notification-container">
-		<h1 class="hidden">알림창</h1>
+	<aside id="notification-container"> 
+		<h1 class="hidden">알림창</h1>     
 		<section class="notification-arrow">
-		</section> 
+		</section>  
 		<section class="notification-info">
 			<ul>
 				<li>나는 알람입니다. 잘부탁드립니다.</li>
@@ -223,18 +239,22 @@ window.addEventListener("load", function(){
     var header = document.querySelector("#header");
     var menuButton = document.querySelector("#menu-button");
     var headerButtons = document.querySelector("#header-buttons");
+    var notificationContainer = document.querySelector("#notification-container");
     var notificationButton = headerButtons.querySelector(".notification-button");
     
     header.onclick = function(e){
         var el = e.target; 
-        if(el.nodeName =="HEADER")
+        if(el.nodeName =="HEADER"){
             header.classList.remove("menu-show");
+        	header.classList.remove("notification-show");
+        }
         else   
-            return; 
-    }; 
-    
-    notificationButton.onclick = function(){ 
-    	
+            return;  
+    };   
+      
+    notificationButton.onclick = function(e){ 
+    	header.classList.add("notification-show");  
+        e.stopPropagation();    
     }
     
     menuButton.onclick = function(e){
