@@ -1,17 +1,16 @@
-package com.picknroll.web.controller.admin;
+package com.picknroll.web.controller.client;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin/member/")
-public class MemberController {
-
+@RequestMapping("/member/store/")
+public class StoreController {
+	
 	@RequestMapping("list")
 	public String list(Model model) {
-		model.addAttribute("mainTitle", "회원관리");
-		return "admin.member.list";
+		return "member.store.list";
 	}
 
 }
