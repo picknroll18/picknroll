@@ -10,13 +10,11 @@ public class ServiceController {
 
 	@RequestMapping("reg")
 	public String reg(Model model) {
-		model.addAttribute("mainTitle", "서비스관리");
 		return "admin.service.reg";
 	}
 
 	@RequestMapping("list")
 	public String list(Model model) {
-		model.addAttribute("mainTitle", "서비스관리");
 		return "admin.service.list";
 	}
 
