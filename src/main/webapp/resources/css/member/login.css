@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+#logo{
+	text-align: center;
+	padding-top: 5em;
+}   
+
+#member-menu{ 
+	text-align: right;   
+	padding-top: 5em;   
+}  
+
+	#member-menu > ul > li{
+		display: inline-block; 
+	}
+
+#login-container{
+	padding-top : 1em
+}
+  
+  
+
+	#login-form ul {
+
+	}
+
+	#login-form ul > li {
+		position : relative;
+		border: 1px solid #bebebe;
+		border-radius: 5px; 
+		margin-bottom: 1.5em; 
+		width: 100%;  
+		height: 2.5em; 
+	}   
+	#login-form li input[type="text"] {
+		position : absolute;  
+		top : 0px;  
+		width : 85%;  
+		height: 2.8em;      
+	    border: 0px;   
+	    padding-left: 10px;   
+	}
+	#login-form li input:focus { outline: none; }
+	
+	#login-form .id-li {
+		
+	}
+	
+	#login-form .password-li {
+		
+	}
+
+
+

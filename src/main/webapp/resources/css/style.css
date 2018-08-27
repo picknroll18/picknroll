@@ -27,10 +27,17 @@ li{
 	display: none;
 }
 
+.button{
+	width: 24px;
+	height: 24px;
+	overflow: hidden; 
+	text-indent: -999px;  
+	border: 0px;
+	padding: 0px;
+	cursor: pointer;
+}
+
 /*--------------------------------*/
-
-
-
 
 
 
