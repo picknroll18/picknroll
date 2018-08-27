@@ -30,11 +30,17 @@ li{
 .button{
 	width: 24px;
 	height: 24px;
-	overflow: hidden; 
-	text-indent: -999px;  
+	overflow: hidden;
 	border: 0px;
-	padding: 0px;
+	padding: 0px; 
 	cursor: pointer;
+}
+
+.black-button{
+	background: #525252; 
+	text-align: center;
+	color: white; 
+	border-radius: 5px;  
 }
 
 /*--------------------------------*/

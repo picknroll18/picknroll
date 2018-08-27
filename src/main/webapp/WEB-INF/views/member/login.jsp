@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="/resources/css/member/login.css">
 <main id="main">
-	<div class="content-container">
+	<div class="main-container">
 		<section id="top-menu">
 			<input type="button" class="button home-button" />
 		</section>
@@ -21,18 +21,18 @@
 			<ul>
 				<li>회원가입</li>  
 				<li>계정찾기</li> 
-			</ul>
+			</ul> 
 		</section>
-		<section id="login-container">
+		<section id="member-container">
 			<h1 class="hide">로그인폼</h1>
-			<form action="" id="login-form">
+			<form action="" id="member-form">
 				<ul>
-					<li class="id-li"><img src="/resources/images/icon-member.png" /><input type="text" /></li>
-					<li class="password-li"><img src="/resources/images/icon-lock.png" /><input type="text" /></li>
-					<li><input type="checkbox" /><span>자동로그인</span></li>
-				</ul>
-				<input id="login-button" class="btn" type="button" />
+					<li><label for="id"><img src="/resources/images/icon-member.png" /></label><input type="text" class="input-text" id="id" placeholder="아이디를 입력해주세요." autocomplete=off /></li>
+					<li><label for="password"><img src="/resources/images/icon-lock.png" /></label><input type="password" class="input-text" id="password" placeholder="비밀번호를 입력해주세요." autocomplete=off /></li>
+					<li><input type="checkbox" id="auto-login" /><label for="auto-login">자동로그인</label></li>
+	 			</ul>
+				<input id="submit-button" class="button black-button bottom-button" type="button" value="로그인" />  
 			</form>
-		</section>
+		</section> 
 	</div>
 </main>

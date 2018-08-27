@@ -1,16 +1,30 @@
 @charset "UTF-8";
 
+/*---member/style.css----------------------------------------------------*/
 html, body {
 	width: 100%; height: 100%;
 }
 
-.content-container{ 
+.main-container{ 
 	box-sizing: border-box; 
 	padding : 10px; 
+	min-width : 300px;
 	min-height: 100%;   
 	border : 1px solid #e0e0e0; 
 	border-radius: 10px;
 	position: relative;
+	color: #333333; 
+}
+
+.bottom-button { 
+	position: absolute;
+	bottom: 10%;
+	left:50%; 
+	transform:translateX(-50%);
+	width: 95%;   
+	height: 40px;
+	font-size: 1em;  
+	font-weight: bold;
 }
 
 /*--main---------------------------------------*/
@@ -23,6 +37,8 @@ html, body {
 	padding : 5%; 
 } 
 
+
+/*--top-menu---------------------------------------*/
 #top-menu{
 	position: absolute;
 	right: 10px;
@@ -33,3 +49,6 @@ html, body {
 		background: url("/resources/images/icon-home.png") no-repeat;
 		background-size: cover;
 	}
+
+	
+/*--main-title-------------------------------------*/
