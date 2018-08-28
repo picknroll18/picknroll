@@ -23,6 +23,10 @@ li{
 	list-style-type: none;
 }
 
+p{
+	margin: 0px;
+}
+
 .hide{ 
 	display: none;
 }
@@ -42,6 +46,15 @@ li{
 	color: white; 
 	border-radius: 5px;  
 }
+
+.blue-button{
+	background: #3498db; 
+	text-align: center;
+	color: white; 
+	border-radius: 5px;
+}
+
+
 
 /*--------------------------------*/
 

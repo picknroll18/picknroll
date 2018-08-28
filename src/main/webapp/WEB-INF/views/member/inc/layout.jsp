@@ -11,6 +11,6 @@
 <title>PicknRoll</title>
 </head>
 <body>
-	<tiles:insertAttribute name="main" />
+			<tiles:insertAttribute name="main" />
 </body>  
 </html>  

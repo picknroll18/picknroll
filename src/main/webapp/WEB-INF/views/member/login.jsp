@@ -27,12 +27,21 @@
 			<h1 class="hide">로그인폼</h1>
 			<form action="" id="member-form">
 				<ul>
-					<li><label for="id"><img src="/resources/images/icon-member.png" /></label><input type="text" class="input-text" id="id" placeholder="아이디를 입력해주세요." autocomplete=off /></li>
-					<li><label for="password"><img src="/resources/images/icon-lock.png" /></label><input type="password" class="input-text" id="password" placeholder="비밀번호를 입력해주세요." autocomplete=off /></li>
-					<li><input type="checkbox" id="auto-login" /><label for="auto-login">자동로그인</label></li>
+					<li>
+						<label for="id"><img src="/resources/images/icon-member.png" /></label>
+						<input type="text" class="login-input" id="id" placeholder="아이디를 입력해주세요." autocomplete=off />
+					</li>
+					<li>
+						<label for="password"><img src="/resources/images/icon-lock.png" /></label>
+						<input type="password" class="login-input" id="password" placeholder="비밀번호를 입력해주세요." autocomplete=off />
+					</li>
+					<li>
+						<input type="checkbox" id="auto-login" />
+						<label for="auto-login">자동로그인</label>
+					</li>
 	 			</ul>
 				<input id="submit-button" class="button black-button bottom-button" type="button" value="로그인" />  
 			</form>
-		</section> 
+		</section>  
 	</div>
 </main>

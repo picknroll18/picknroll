@@ -16,4 +16,9 @@ public class MemberController {
 	public String login() {
 		return "member.login";
 	}
+	
+	@GetMapping("join-detail")
+	public String joinDetail() {
+		return "member.join-detail";
+	}
 }
