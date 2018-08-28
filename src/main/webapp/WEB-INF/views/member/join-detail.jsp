@@ -17,14 +17,10 @@
 			<h1 class="hide">부가설명</h1> 
 			<p>회원가입을 축하드립니다. 서비스에 필요한 부가정보를 입력해주세요.</p> 
 		</section>
-<!-- 		    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border: 1px solid #ccc;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    background-color: rgb(255, 255, 255);
-    line-height: 40px; -->
+		<section id="member-profile">
+			<h1 class="hide">프로필사진</h1>
+			<div class="profile-photo" style="background: url('/resources/images/okinawa.jpg') no-repeat center; background-size: cover; "></div>
+		</section>  
 		<section id="member-container" class="content-container">
 			<h1 class="hide">회원가입폼</h1>
 			<form action="" id="member-form">
@@ -35,7 +31,7 @@
 					</li>
 					<li>
 						<label class="list-label" for="">성별</label>
-						<select>
+						<select class="input-select-md"> 
 							<option>남</option>
 							<option>여</option>
 						</select>

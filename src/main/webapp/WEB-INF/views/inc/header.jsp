@@ -57,10 +57,8 @@ a {
 	height : 150px;
 	border : 1px solid #a9a9a9;
 	border-radius: 75px; 
-/* 	background-size: cover;  */
-	/*cover는 빈 공백이 없게 하라*/  
 }
-
+ 
 .photo-sm{
 
 }
