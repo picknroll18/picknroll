@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
 /*--reset---------------------------------------------- */
 body {
@@ -216,7 +217,13 @@ a {
 			<div>
 				<div class="photo" style="background: url('/resources/images/okinawa.jpg') no-repeat center; background-size: cover; "></div>
 				<div class="uid"><span>newlec</span></div>
-				<div class="auth-status"><a href="">로그아웃</a></div> 
+				<c:if test="${empty pageContext.request.userPrincipal }">
+					<div class="auth-status"><a href="">로그인</a></div>
+				</c:if> 
+				<c:if test="${not empty pageContext.request.userPrincipal }">
+					<div class="auth-status"><a href="">로그아웃</a></div>
+				</c:if>
+				 
 				<div class="notice"><span>강사공지 : </span><a href="#">3</a></div>
 			</div>
 		</section>

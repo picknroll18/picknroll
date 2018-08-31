@@ -1,93 +1,15 @@
 @charset "UTF-8";
 
-#logo{ 
-	text-align: center;
-	padding-top: 20%;
-}   
 
-#member-menu{ 
-	text-align: right;   
-	padding-top: 5em;
-}  
-
-	#member-menu > ul > li{
-		display: inline-block;
-		font-weight: bold;
-		font-size: 0.8em;
-		line-height: 0px; 
-		cursor: pointer;
-	}
-	
-	#member-menu > ul > li:first-child{
-		padding-right: 10px;
-	}
-
-#login-container{
-	padding-top : 1em;
+#pwd-reset{
+	margin-top: 20%;
 }
-   
-	#login-form ul {
 
-	}
+/*--member-form---------------------------------------------------*/
+#member-form{
+	
+}
 
-	#login-form ul > li {
-		position : relative;
-		border: 1px solid #bebebe;
-		border-radius: 5px; 
-		margin-bottom: 1.5em; 
-		width: 100%;  
-		height: 2.5em;
+	#member-form > ul > li{
+		margin-top: 10px;	 
 	}
-	
-	#login-form ul > li:last-child {
-		border: 0px;
-		margin-top: -10px;  
-		  
-	}
-	
-	#login-form ul > li:last-child input{
-	    vertical-align: middle;
-		width: 15px;
-		height: 15px;  
-	}
-	
-	#login-form ul > li:last-child label{
-  		vertical-align: middle;
-		width: 15px; 
-		height: 15px; 
-		font-weight: bold;
-		font-size: 0.8em; 
-	} 
-	
-	#login-form li img {
-		width : 2em;
-		padding-top: 5px;
-		padding-left : 5px;
-	}     
-	 
-	#login-form li .input-text {
-		position : absolute;  
-		top : 0px;    
-		width : 75%;    
-		height: 2.8em;        
-	    border: 0px;     
-	    padding-left: 20px; 
-	}
-	
-	#login-form li input:focus { 
-		outline: none; 
-	}
-	
-	#login-form #login-button { 
-		position: absolute;
-		bottom: 10%;
-		left:50%; 
-		transform:translateX(-50%);
-		width: 95%;   
-		height: 40px;
-		font-size: 1em;  
-		font-weight: bold;
-	}
-	
-	
-	

@@ -1,29 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="/resources/css/member/profile.css">
-<main id="main">
-	<div class="main-container">
+<main id="main"> 
+	<div class="main-container">  
 		<section id="top-menu">
 			<input type="button" class="button home-button" />
 		</section>
 		
 		<section id="main-title"> 
-			<h1></h1> 
+			<h1>프로필</h1> 
 		</section>
 		
-		<section id="page-description">
-			<h1 class="hide">부가설명</h1> 
-			<p></p> 
+		<section id="member-profile">
+			<h1 class="hide">프로필사진</h1>
+			<div class="profile-photo" style="background: url('/resources/images/okinawa.jpg') no-repeat center; background-size: cover; "></div>
 		</section>
-		
+		  
 		<section id="member-container" class="content-container">
-			<h1 class="hide">?????폼</h1>
-			<form action="" id="member-form">
+			<h1 class="hide">프로필</h1>
+			<div action="" id="member-form">
 				<ul>
-					<li><label for="">아이디</label><input type="text" class="input-text" id="id" placeholder="아이디를 입력해주세요." autocomplete=off /></li>
+					<li><label class="list-label" for="">아이디</label><span>flwjflwj</span></li>
+					<li><label class="list-label" for="">이메일</label><span>flwj@naver.com</span></li>
+					<li><label class="list-label" for="">닉네임</label><span>고슴도치가시</span></li>
+					<li><label class="list-label" for="">성별</label><span>남</span></li>
+					<li><label class="list-label" for="">생년월일</label><span>1990-01-06</span></li>
 	 			</ul>    
-				<input id="submit-button" class="button black-button bottom-button" type="button" value="다음" />  
-			</form>
+			</div>
 		</section>
-	</div>
+		<section id="edit-buttons">
+			<input id="password-button" class="button black-button bottom-button-md" type="button" value="비밀번호변경" />
+			<input id="detail-button" class="button black-button bottom-button-md" type="button" value="부가정보변경" />
+		</section>
+	</div>  
 </main>

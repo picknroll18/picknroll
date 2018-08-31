@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+/*--member-profile----------------------------------------------*/
+#member-profile{
+	margin-top : 5%;
+	text-align: center;
+}
+
 /*--member-form---------------------------------------------------*/
 #member-form{
 	

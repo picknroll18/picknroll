@@ -4,9 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
+@Controller("adminHomeController")
 @RequestMapping("/admin/")
-public class AdminController {
+public class HomeController {
 	@RequestMapping("/member/list")
 	public String list(Model model) {
 		model.addAttribute("mainTitle", "회원관리");

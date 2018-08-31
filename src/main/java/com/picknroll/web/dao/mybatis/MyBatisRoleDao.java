@@ -2,9 +2,12 @@ package com.picknroll.web.dao.mybatis;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.picknroll.web.dao.RoleDao;
 import com.picknroll.web.entity.Role;
 
+@Repository
 public class MyBatisRoleDao implements RoleDao {
 
 	@Override

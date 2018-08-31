@@ -21,4 +21,31 @@ public class MemberController {
 	public String joinDetail() {
 		return "member.join-detail";
 	}
+	
+	@GetMapping("pwd-reset")
+	public String pwdReset() {
+		return "member.pwd-reset";
+	}
+	
+	@GetMapping("pwd-edit")
+	public String pwdEdit() {
+		return "member.pwd-edit";
+	}
+	
+	@GetMapping("find-id")
+	public String findId() {
+		return "member.find-id";
+	}
+	
+	@GetMapping("detail-edit")
+	public String detailEdit() {
+		return "member.detail-edit";
+	}
+	
+	@GetMapping("profile")
+	public String profile() {
+		return "member.profile";
+	}
+	
+	
 }
