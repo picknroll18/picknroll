@@ -1,19 +1,32 @@
 package com.picknroll.web.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.picknroll.web.entity.Member;
+import com.picknroll.web.service.MemberService;
 
 @Controller
 @RequestMapping("/member/")
 public class MemberController {
+	
+	@Autowired
+	private MemberService memberService;
+	
 	@GetMapping("join")
 	public String join() {
 		return "member.join";
 	}
 
 	@GetMapping("login")
-	public String login() {
+	public String login(Model model) {
+		List<Member> memberList = memberService.getList();
+		model.addAttribute("memberList", memberList);
 		return "member.login";
 	}
 	

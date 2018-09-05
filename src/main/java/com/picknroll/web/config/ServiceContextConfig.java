@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-@ComponentScan(basePackages={"com.picknroll.web.dao.mybatis"})
+@ComponentScan(basePackages={"com.picknroll.web.dao.mybatis","com.picknroll.web.service.mybatis"})
 @Configuration
 public class ServiceContextConfig {
 	
@@ -20,11 +20,27 @@ public class ServiceContextConfig {
 		BasicDataSource basicDataSource = new BasicDataSource();
 
 		// db 연결 설정
-		basicDataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		
+		/*mssqlserver*/
+/*		basicDataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		basicDataSource.setUrl("jdbc:sqlserver://211.238.142.251:1433;databaseName=lecture");
 		basicDataSource.setUsername("sist");
-		basicDataSource.setPassword("dclass");
+		basicDataSource.setPassword("dclass");*/
+		
+		
+        /*mysql*/
+/*      basicDataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		basicDataSource.setUrl("jdbc:mysql://localhost/picknrolldb?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8");
+        basicDataSource.setUsername("hong");
+        basicDataSource.setPassword("1234");*/
+        
+        /*mariadb*/
+        basicDataSource.setDriverClassName("org.mariadb.jdbc.Driver");
+		basicDataSource.setUrl("jdbc:mariadb://picknroll.gonetis.com:3306/picknrolldb?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8");
+        basicDataSource.setUsername("pi");
+        basicDataSource.setPassword("magnetic0611");
 
+        
 		// 커넥션풀 설정
 		basicDataSource.setRemoveAbandoned(true);
 		basicDataSource.setInitialSize(20);

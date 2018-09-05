@@ -28,11 +28,12 @@
 
 	<select id="getList" resultType="com.picknroll.web.entity.Member">
 		select * from Member
-		where ${param1} like '%${param2}%'
-		<!-- 다음은 페이징을 위한 쿼리 옵션 -->
+		<!-- 페이징과 조건처리 해야 함 -->
+<!-- 		where ${param1} like '%${param2}%'
+		다음은 페이징을 위한 쿼리 옵션
 		order by regDate desc
 		offset #{(param3-1)}*10 rows
-		fetch next 10 rows only
+		fetch next 10 rows only -->
 	</select>
 
 </mapper>

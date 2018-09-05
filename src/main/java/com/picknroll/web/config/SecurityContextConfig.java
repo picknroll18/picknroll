@@ -2,19 +2,25 @@ package com.picknroll.web.config;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
+@ComponentScan("com.picknroll.web.config") // 컴포넌트 스캔 가즈아
 @EnableWebSecurity
 public class SecurityContextConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private BasicDataSource basicDataSource;
+	
+	@Autowired
+	private AuthenticationSuccessHandler authenticationSuccessHandler;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -28,9 +34,14 @@ public class SecurityContextConfig extends WebSecurityConfigurerAdapter {
 			.anyRequest().permitAll() // 나머지는 권한 필요없어
 		.and()
 		.formLogin() // 폼을 이용해서 로그인
+			.defaultSuccessUrl("/index") // 기본 로그인성공 url
 			.loginPage("/member/login") // GET 내가 만든 로그인페이지로 이동
-			.loginProcessingUrl("/member/login"); // POST LOGIN ACTION 지정
-		
+			.loginProcessingUrl("/member/login") // POST LOGIN ACTION 지정
+			.successHandler(authenticationSuccessHandler) // 로그인 처리 핸들러
+		.and()
+		.logout() // 로그아웃 설정
+			.logoutUrl("/member/logout")
+			.logoutSuccessUrl("/index");
 	}
 
 	@Override
