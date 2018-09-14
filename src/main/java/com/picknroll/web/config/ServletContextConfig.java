@@ -1,8 +1,14 @@
 package com.picknroll.web.config;
 
+import java.nio.charset.Charset;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -12,7 +18,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
 
-@ComponentScan(basePackages={"com.picknroll.web.controller"})
+@ComponentScan(basePackages = { "com.picknroll.web.controller" })
 @EnableWebMvc // annotation-driven
 @Configuration
 public class ServletContextConfig implements WebMvcConfigurer {
@@ -44,8 +50,26 @@ public class ServletContextConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		//<mvc:resources location="/resources/" mapping="/resources/**" />
+		// <mvc:resources location="/resources/" mapping="/resources/**" />
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+	}
+
+	@Override
+	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+		StringHttpMessageConverter converter = new StringHttpMessageConverter(Charset.forName("UTF-8"));
+		converter.setWriteAcceptCharset(false); // 내가 설정한 방식을 따라라..
+		converters.add(converter);
+		WebMvcConfigurer.super.configureMessageConverters(converters);
+	}
+	
+	@Bean
+	public CommonsMultipartResolver multipartResolver() {
+		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+		// 파일 사이즈 설정
+		resolver.setMaxUploadSize(1024*1024*100); // 전체
+		resolver.setMaxUploadSizePerFile(1024*1024*10); // 파일 마다
+		resolver.setDefaultEncoding("UTF-8");
+		return resolver;
 	}
 
 }

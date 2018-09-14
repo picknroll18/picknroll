@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="/resources/css/member/find-id.css">
+<!-- <link rel="stylesheet" type="text/css" href="/resources/css/member/find-id.css"> -->
 <main id="main"> 
 	<div class="main-container">
 		<section id="top-menu">
-			<input type="button" class="button home-button" />
+			<input type="button" value="홈버튼" class="button home-button" />
 		</section>
 		
 		<section id="main-title"> 

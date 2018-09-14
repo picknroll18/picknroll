@@ -7,6 +7,8 @@ import com.picknroll.web.entity.Member;
 public interface MemberDao {
 
 	int insert(Member member);
+	
+	int updateDetail(Member member);
 
 	int update(Member member);
 
@@ -21,5 +23,11 @@ public interface MemberDao {
 	List<Member> getList(String field ,String query);
 
 	List<Member> getList(String field ,String query, int page);
+
+	Member getByEmail(String email);
+
+	Member getByNickname(String nickname);
+
+	int updatePassword(String id, String oldPassword);
 
 }

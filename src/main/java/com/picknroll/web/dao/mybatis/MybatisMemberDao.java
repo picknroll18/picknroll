@@ -20,6 +20,12 @@ public class MybatisMemberDao implements MemberDao {
 		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
 		return memberDao.insert(member);
 	}
+	
+	@Override
+	public int updateDetail(Member member) {
+		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
+		return memberDao.updateDetail(member);
+	}
 
 	@Override
 	public int update(Member member) {
@@ -61,6 +67,24 @@ public class MybatisMemberDao implements MemberDao {
 	public List<Member> getList(String field ,String query, int page) {
 		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
 		return memberDao.getList(field, query, page);
+	}
+
+	@Override
+	public Member getByEmail(String email) {
+		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
+		return memberDao.getByEmail(email);
+	}
+
+	@Override
+	public Member getByNickname(String nickname) {
+		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
+		return memberDao.getByNickname(nickname);
+	}
+
+	@Override
+	public int updatePassword(String id, String newPassword) {
+		MemberDao memberDao = sqlSession.getMapper(MemberDao.class);
+		return memberDao.updatePassword(id, newPassword);
 	}
 
 }

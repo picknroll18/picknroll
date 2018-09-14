@@ -5,9 +5,20 @@
 <mapper namespace="com.picknroll.web.dao.MemberDao">
 
 	<insert id="insert" parameterType="com.picknroll.web.entity.Member">
-		insert into Member(id, name, email, pwd)
-		values(#{id}, #{name}, #{email}, #{pwd})
+		insert into Member(id, password, email, nickname)
+		values(#{id}, #{password}, #{email}, #{nickname})
 	</insert>
+	
+	<update id="updateDetail" parameterType="com.picknroll.web.entity.Member">
+		update Member
+		set  gender = #{gender}
+			,birthday = #{birthday}
+			<if test="photo!=null and !photo.equals('')">
+				,photo = #{photo}
+			</if>
+		where id = #{id}
+		<!-- 포맷팅 해야 함 -->
+	</update>
 
 	<update id="update" parameterType="com.picknroll.web.entity.Member">
 		update [Member]
@@ -23,9 +34,17 @@
 	</delete>
 
 	<select id="get" resultType="com.picknroll.web.entity.Member">
-		select * from Member where id=#{param1}
+		select * from Member where id = #{param1}
 	</select>
-
+	
+	<select id="getByEmail" resultType="com.picknroll.web.entity.Member">
+		select * from Member where email=#{param1}
+	</select>
+	
+	<select id="getByNickname" resultType="com.picknroll.web.entity.Member">
+		select * from Member where nickname=#{param1}
+	</select>
+	
 	<select id="getList" resultType="com.picknroll.web.entity.Member">
 		select * from Member
 		<!-- 페이징과 조건처리 해야 함 -->
@@ -35,5 +54,12 @@
 		offset #{(param3-1)}*10 rows
 		fetch next 10 rows only -->
 	</select>
+	
+	<update id="updatePassword">
+		update Member set
+			password = #{param2}
+		where 
+			id = #{param1}
+	</update>
 
 </mapper>

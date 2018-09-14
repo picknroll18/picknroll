@@ -1,16 +1,18 @@
 package com.picknroll.web.entity;
 
 public class MemberRole {
-	
+
 	private String memberId;
 	private String roleName;
+	private boolean defaultRole;
 
 	public MemberRole() {
 	}
 
-	public MemberRole(String memberId, String roleName) {
+	public MemberRole(String memberId, String roleName, boolean defaultRole) {
 		this.memberId = memberId;
 		this.roleName = roleName;
+		this.defaultRole = defaultRole;
 	}
 
 	public String getMemberId() {
@@ -29,9 +31,12 @@ public class MemberRole {
 		this.roleName = roleName;
 	}
 
-	@Override
-	public String toString() {
-		return "MemberRole [memberId=" + memberId + ", roleName=" + roleName + "]";
+	public boolean getDefaultRole() {
+		return defaultRole;
 	}
-	
+
+	public void setDefaultRole(boolean defaultRole) {
+		this.defaultRole = defaultRole;
+	}
+
 }

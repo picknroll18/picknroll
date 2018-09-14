@@ -1,5 +1,7 @@
 package com.picknroll.web.entity;
 
+import java.util.Date;
+
 public class Member {
 	private String id;
 	private String password;
@@ -8,14 +10,15 @@ public class Member {
 	private String birthday;
 	private String gender;
 	private String photo;
-	private String regDate;
-	private String editDate;
+	private boolean restrictionStatus;
+	private Date regDate;
+	private Date editDate;
 
 	public Member() {
 	}
 
 	public Member(String id, String password, String nickname, String email, String birthday, String gender,
-			String photo, String regDate, String editDate) {
+			String photo, boolean restrictionStatus, Date regDate, Date editDate) {
 		this.id = id;
 		this.password = password;
 		this.nickname = nickname;
@@ -23,6 +26,7 @@ public class Member {
 		this.birthday = birthday;
 		this.gender = gender;
 		this.photo = photo;
+		this.restrictionStatus = restrictionStatus;
 		this.regDate = regDate;
 		this.editDate = editDate;
 	}
@@ -83,27 +87,35 @@ public class Member {
 		this.photo = photo;
 	}
 
-	public String getRegDate() {
+	public boolean isRestrictionStatus() {
+		return restrictionStatus;
+	}
+
+	public void setRestrictionStatus(boolean restrictionStatus) {
+		this.restrictionStatus = restrictionStatus;
+	}
+
+	public Date getRegDate() {
 		return regDate;
 	}
 
-	public void setRegDate(String regDate) {
+	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
 
-	public String getEditDate() {
+	public Date getEditDate() {
 		return editDate;
 	}
 
-	public void setEditDate(String editDate) {
+	public void setEditDate(Date editDate) {
 		this.editDate = editDate;
 	}
 
 	@Override
 	public String toString() {
 		return "Member [id=" + id + ", password=" + password + ", nickname=" + nickname + ", email=" + email
-				+ ", birthday=" + birthday + ", gender=" + gender + ", photo=" + photo + ", regDate=" + regDate
-				+ ", editDate=" + editDate + "]";
+				+ ", birthday=" + birthday + ", gender=" + gender + ", photo=" + photo + ", restrictionStatus="
+				+ restrictionStatus + ", regDate=" + regDate + ", editDate=" + editDate + "]";
 	}
 
 }

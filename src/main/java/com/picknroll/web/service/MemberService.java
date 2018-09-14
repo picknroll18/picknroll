@@ -1,25 +1,33 @@
 package com.picknroll.web.service;
 
-import java.util.List;
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.picknroll.web.entity.Member;
 
 public interface MemberService {
 
-	int insert(Member member);
+	boolean isEmailDuplicated(String email);
 
-	int update(Member member);
+	boolean isIdDuplicated(String id);
 
-	int delete(String id);
+	boolean isNicknameDuplicated(String nickname);
 
-	Member get(String id);
+	int insertMemberWithBcrypt(Member member);
 
-	List<Member> getList();
+	int updateMemberDetail(Member member);
 
-	List<Member> getList(int page);
+	String insertProfilePicture(String id, MultipartFile photoFile, HttpServletRequest request) throws IOException;
+	
+	String updateProfilePicture(String id, MultipartFile photoFile, HttpServletRequest request) throws IOException;
 
-	List<Member> getList(String field, String query);
+	Member getMember(String id);
 
-	List<Member> getList(String field, String query, int page);
+	int updateMemberPassword(String id, String newPassword);
+
+
 
 }
